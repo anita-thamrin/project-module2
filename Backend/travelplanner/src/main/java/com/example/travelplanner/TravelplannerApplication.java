@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TravelplannerApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Starting application.....");
 		SpringApplication.run(TravelplannerApplication.class, args);
+		System.out.println("Application has started");
 	}
 
 }

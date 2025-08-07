@@ -33,6 +33,7 @@ public class ItineraryServiceImpl implements ItineraryService {
     public ItineraryWithTotalDTO getItinerary(Long id) {
         Itinerary itinerary = repo.findById(id).orElseThrow(() -> new ItineraryNotFoundException(id));
         double totalPrice = itinerary.getTrips()
+<<<<<<< HEAD
             .stream()
             .mapToDouble(Trip::getPrice)
             .sum();
@@ -41,6 +42,16 @@ public class ItineraryServiceImpl implements ItineraryService {
     }
 
     @Override
+=======
+        .stream()
+        .mapToDouble(Trip::getPrice)
+        .sum();
+
+        return new ItineraryWithTotalDTO(itinerary, totalPrice);
+    }
+
+     @Override
+>>>>>>> origin/logback
     public Itinerary updateItinerary(Long id, Itinerary itinerary) {
         Itinerary itineraryToUpdate = repo.findById(id)
                 .orElseThrow(() -> new ItineraryNotFoundException(id));

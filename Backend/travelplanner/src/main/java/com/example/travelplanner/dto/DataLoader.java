@@ -12,11 +12,13 @@ public class DataLoader {
     private UserRepository userRepository;
     
     public DataLoader (UserRepository userRepository) {
+        System.out.println("DataLoader: Constructor called.");
         this.userRepository = userRepository;
     }
 
     @PostConstruct
     public void loadData() {
+        System.out.println("DataLoader: @PostContruct method started.");
         // Clear the database here
         userRepository.deleteAll();
 
